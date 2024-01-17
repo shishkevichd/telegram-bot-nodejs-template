@@ -1,11 +1,7 @@
-const TelegramBot = require("node-telegram-bot-api");
+import TelegramBot from "node-telegram-bot-api"
 
 const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN)
 
-bot.onText(/\/start/, (message) => {
-    const currentDate = new Date().toUTCString()
-
-    bot.sendMessage(message.chat.id, `Current UTC date: ${currentDate}`)
-})
+bot.onText(/\/start/, (message) => bot.sendMessage(message.chat.id, `Hello world!`))
 
 bot.startPolling()

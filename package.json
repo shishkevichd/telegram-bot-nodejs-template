@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "A Telegram bot",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "cross-env TELEGRAM_BOT_TOKEN=TOKEN node index.js"
   },
   "author": "Author",
   "license": "UNLICENSED",
   "dependencies": {
-    "cross-env": "^7.0.3",
-    "node-telegram-bot-api": "^0.63.0"
+    "cross-env": "latest",
+    "node-telegram-bot-api": "latest"
   }
 }
