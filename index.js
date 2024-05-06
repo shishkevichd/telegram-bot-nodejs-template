@@ -9,7 +9,7 @@ const index = () => {
     const bot = new TelegramBot(useConfigStore.getState().botToken)
 
     bot.onText(/\/start/, (message) => onStart(bot, message))
-    bot.on("polling_error", (err) => onError(bot, message))
+    bot.on("polling_error", (error) => onError(bot, error))
 
     bot.startPolling()
 }
