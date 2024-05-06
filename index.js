@@ -1,7 +1,17 @@
 import TelegramBot from "node-telegram-bot-api"
 
-const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN)
+import onStart from "./source/commands/onStart.js"
+import onError from "./source/events/onError.js"
 
-bot.onText(/\/start/, (message) => bot.sendMessage(message.chat.id, `Hello world!`))
+import { useConfigStore } from "./source/store/useConfigStore.js"
 
-bot.startPolling()
+const index = () => {
+    const bot = new TelegramBot(useConfigStore.getState().botToken)
+
+    bot.onText(/\/start/, (message) => onStart(bot, message))
+    bot.on("polling_error", (err) => onError(bot, message))
+
+    bot.startPolling()
+}
+
+index()

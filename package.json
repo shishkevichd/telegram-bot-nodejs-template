@@ -5,12 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "cross-env TELEGRAM_BOT_TOKEN=TOKEN node index.js"
+    "start": "node index.js"
   },
   "author": "Author",
   "license": "UNLICENSED",
   "dependencies": {
-    "cross-env": "latest",
-    "node-telegram-bot-api": "latest"
+    "node-telegram-bot-api": "latest",
+    "zustand": "latest"
   }
 }
