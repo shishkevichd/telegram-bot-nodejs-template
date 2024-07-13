@@ -11,7 +11,7 @@ const index = () => {
     bot.onText(/\/start/, (message) => onStart(bot, message))
     bot.on("polling_error", (error) => onError(bot, error))
 
-    bot.startPolling()
+    return bot.startPolling()
 }
 
 index()
